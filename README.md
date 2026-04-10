@@ -45,7 +45,12 @@ A synthetic house-price dataset (`linear_regression_practice.csv`) generated wit
 True relationship used for generation:
 $$\text{price} = 50{,}000 + 120 \times \text{size} + 15{,}000 \times \text{bedrooms} - 1{,}000 \times \text{age} + \epsilon$$
 
-## Concepts Covered
+
+---
+
+## Folder Structure
+
+---
 
 #### The Linear Equation
 $$y = m \cdot x + b$$
