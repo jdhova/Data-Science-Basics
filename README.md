@@ -1,4 +1,4 @@
-# Supervised Learning
+﻿# Supervised Learning
 
 This folder contains hands-on Jupyter notebooks covering the fundamentals of supervised machine learning, applied to real-world financial crime and fraud-scoring datasets. Topics progress from simple linear regression through multiple linear regression and binary classification.
 
@@ -8,22 +8,22 @@ This folder contains hands-on Jupyter notebooks covering the fundamentals of sup
 
 ```
 Superviced/
-├── Classification/
-│   ├── Classification.ipynb            # Logistic regression fundamentals
-│   ├── Classification2.ipynb           # Bias-variance tradeoff & regularization
-│   ├── important_features_dataset.csv
-│   └── data/
-│       ├── aml_fraud_customer_profiling.csv   # AML customer risk dataset
-│       └── fraud_scoring_dataset.csv
-├── Linear regression Basics/
-│   ├── Linear Regression.ipynb         # Simple linear regression fundamentals
-│   └── linear_regression_practice.csv  # Synthetic house-price dataset
-└── Multiple Linear Regression/
-    ├── MLR.ipynb                        # Dataset creation & enrichment
-    ├── MLR2.ipynb                       # Feature engineering & MLR model
-    ├── MLR3.ipynb                       # Encoding & classification setup
-    └── data/
-        └── fraud_scoring_dataset.csv    # Synthetic fraud-scoring dataset
+Γö£ΓöÇΓöÇ Classification/
+Γöé   Γö£ΓöÇΓöÇ Classification.ipynb            # Logistic regression fundamentals
+Γöé   Γö£ΓöÇΓöÇ Classification2.ipynb           # Bias-variance tradeoff & regularization
+Γöé   Γö£ΓöÇΓöÇ important_features_dataset.csv
+Γöé   ΓööΓöÇΓöÇ data/
+Γöé       Γö£ΓöÇΓöÇ aml_fraud_customer_profiling.csv   # AML customer risk dataset
+Γöé       ΓööΓöÇΓöÇ fraud_scoring_dataset.csv
+Γö£ΓöÇΓöÇ Linear regression Basics/
+Γöé   Γö£ΓöÇΓöÇ Linear Regression.ipynb         # Simple linear regression fundamentals
+Γöé   ΓööΓöÇΓöÇ linear_regression_practice.csv  # Synthetic house-price dataset
+ΓööΓöÇΓöÇ Multiple Linear Regression/
+    Γö£ΓöÇΓöÇ MLR.ipynb                        # Dataset creation & enrichment
+    Γö£ΓöÇΓöÇ MLR2.ipynb                       # Feature engineering & MLR model
+    Γö£ΓöÇΓöÇ MLR3.ipynb                       # Encoding & classification setup
+    ΓööΓöÇΓöÇ data/
+        ΓööΓöÇΓöÇ fraud_scoring_dataset.csv    # Synthetic fraud-scoring dataset
 ```
 
 ---
@@ -38,9 +38,9 @@ A synthetic house-price dataset (`linear_regression_practice.csv`) generated wit
 | Column | Description |
 |---|---|
 | `size_sqft` | House size in square feet |
-| `bedrooms` | Number of bedrooms (1–5) |
-| `age_years` | House age in years (0–30) |
-| `price` | Target — house price |
+| `bedrooms` | Number of bedrooms (1ΓÇô5) |
+| `age_years` | House age in years (0ΓÇô30) |
+| `price` | Target ΓÇö house price |
 
 True relationship used for generation:
 $$\text{price} = 50{,}000 + 120 \times \text{size} + 15{,}000 \times \text{bedrooms} - 1{,}000 \times \text{age} + \epsilon$$
@@ -57,7 +57,7 @@ $$y = m \cdot x + b$$
 
 Where $m$ is the slope (price change per sqft) and $b$ is the intercept (base price).
 
-#### Cost Function — Mean Squared Error (MSE)
+#### Cost Function ΓÇö Mean Squared Error (MSE)
 $$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2$$
 
 The notebook demonstrates why the best-fit line minimises MSE by comparing multiple candidate lines with different slopes and intercepts.
@@ -84,7 +84,7 @@ The notebook runs 2,000 iterations with a learning rate of $\alpha = 1 \times 10
 | MSE | $\frac{1}{n} \sum (\hat{y} - y)^2$ |
 | RMSE | $\sqrt{\text{MSE}}$ |
 | MAE | $\frac{1}{n} \sum |\hat{y} - y|$ |
-| R² | $1 - \frac{\text{SS}_{\text{res}}}{\text{SS}_{\text{tot}}}$ |
+| R┬▓ | $1 - \frac{\text{SS}_{\text{res}}}{\text{SS}_{\text{tot}}}$ |
 
 #### Visualisations
 - Scatter plot with best-fit line
@@ -97,7 +97,7 @@ The notebook runs 2,000 iterations with a learning rate of $\alpha = 1 \times 10
 
 ## 2. Multiple Linear Regression
 
-### Notebook 1 — Dataset Creation & Enrichment
+### Notebook 1 ΓÇö Dataset Creation & Enrichment
 
 **Notebook:** `Multiple Linear Regression/MLR.ipynb`
 
@@ -107,31 +107,31 @@ This notebook builds the `fraud_scoring_dataset.csv` used throughout the MLR sec
 
 | Column | Description |
 |---|---|
-| `transaction_amount` | Transaction amount (10–10,000) |
-| `customer_age` | Customer age (18–80) |
-| `account_age_days` | Account age in days (1–3,650) |
+| `transaction_amount` | Transaction amount (10ΓÇô10,000) |
+| `customer_age` | Customer age (18ΓÇô80) |
+| `account_age_days` | Account age in days (1ΓÇô3,650) |
 | `num_transactions_30days` | Transaction count in last 30 days |
-| `failed_login_attempts` | Failed login count (0–10) |
+| `failed_login_attempts` | Failed login count (0ΓÇô10) |
 | `international_transaction` | Binary flag (0 or 1) |
-| `fraud_score` | Target — continuous score (0–100) |
+| `fraud_score` | Target ΓÇö continuous score (0ΓÇô100) |
 
 #### Data Enrichment
 - **Dummy names** assigned randomly (`first_name`, `last_name`)
 - **Country assignment** based on `fraud_score` bands:
-  - High score (≥66): safe countries (e.g. Germany, Sweden, Switzerland)
-  - Medium score (33–66): medium-risk countries (e.g. India, Brazil, Turkey)
+  - High score (ΓëÑ66): safe countries (e.g. Germany, Sweden, Switzerland)
+  - Medium score (33ΓÇô66): medium-risk countries (e.g. India, Brazil, Turkey)
   - Low score (<33): high-risk countries (e.g. Afghanistan, Yemen, Somalia)
 - **FATF-based sanctioned countries flag** (`is_sanctioned_country`): Iran, North Korea, Russia, Syria, Cuba
 - **Country risk group column**: `safe_country_group`, `medium_risk_country_group`, `high_risk_country_group`, `sanctioned_country_group`
 
 ---
 
-### Notebook 2 — Feature Engineering & MLR Model
+### Notebook 2 ΓÇö Feature Engineering & MLR Model
 
 **Notebook:** `Multiple Linear Regression/MLR2.ipynb`
 
 #### Feature Selection
-Works with `transaction_amount`, `country`, `customer_age` → target: `fraud_score`.
+Works with `transaction_amount`, `country`, `customer_age` ΓåÆ target: `fraud_score`.
 
 #### Correlation Analysis
 - **Pearson correlation** between numeric features and `fraud_score`
@@ -140,12 +140,12 @@ Works with `transaction_amount`, `country`, `customer_age` → target: `fraud_sc
 #### Z-Score Normalisation
 $$z = \frac{x - \mu}{\sigma}$$
 
-Applied to `transaction_amount` and `customer_age` before modelling. Verifies that normalised columns have mean ≈ 0 and std ≈ 1.
+Applied to `transaction_amount` and `customer_age` before modelling. Verifies that normalised columns have mean Γëê 0 and std Γëê 1.
 
 #### One-Hot Encoding
 `pd.get_dummies` applied to the `country` column (29 countries), producing a wide encoded DataFrame ready for regression.
 
-#### Multiple Linear Regression — Normal Equation
+#### Multiple Linear Regression ΓÇö Normal Equation
 The model formula:
 $$f(x) = w_1 x_1 + w_2 x_2 + \cdots + w_n x_n + b$$
 
@@ -158,9 +158,9 @@ $$\mathbf{w} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}$$
 Visualises cost function decrease across multiple learning rates, showing the effect of $\alpha$ on convergence speed.
 
 #### Visualisations
-- Actual vs Predicted fraud score scatter plot (with R² annotation)
+- Actual vs Predicted fraud score scatter plot (with R┬▓ annotation)
 - Residuals vs Predicted scatter plot (with RMSE annotation)
-- MSE, RMSE, MAE, R² summary table
+- MSE, RMSE, MAE, R┬▓ summary table
 - Cost curve across gradient descent iterations for different learning rates
 
 #### Performance Table
@@ -168,7 +168,7 @@ Per-row comparison of actual vs predicted fraud score including residual, absolu
 
 ---
 
-### Notebook 3 — Encoding & Classification Setup
+### Notebook 3 ΓÇö Encoding & Classification Setup
 
 **Notebook:** `Multiple Linear Regression/MLR3.ipynb`
 
@@ -176,18 +176,18 @@ Picks up the same `fraud_scoring_dataset.csv` and demonstrates:
 
 - Z-Score Normalisation on `transaction_amount` and `customer_age`
 - One-Hot Encoding of `country` column (29 countries, `drop_first=False`)
-- Exploration of `country_risk_group` value counts — framing the dataset as a multi-class classification problem (safe, medium-risk, high-risk, sanctioned)
+- Exploration of `country_risk_group` value counts ΓÇö framing the dataset as a multi-class classification problem (safe, medium-risk, high-risk, sanctioned)
 
 ---
 
 ## 3. Classification
 
-### Notebook 1 — Logistic Regression Fundamentals
+### Notebook 1 ΓÇö Logistic Regression Fundamentals
 
 **Notebook:** `Classification/Classification.ipynb`
 
 #### Dataset
-`data/aml_fraud_customer_profiling.csv` — Anti-Money Laundering (AML) customer risk profiling.
+`data/aml_fraud_customer_profiling.csv` ΓÇö Anti-Money Laundering (AML) customer risk profiling.
 
 Key columns used:
 
@@ -198,8 +198,8 @@ Key columns used:
 | `Country_Risk_Score` | Numeric country risk score |
 | `Country_Risk_Score_Squared` | Squared country risk score (non-linear feature) |
 | `Country_Risk_Flag` | Binary country risk flag |
-| `Volume_x_CountryRisk` | Transaction volume × country risk interaction |
-| `Amount_x_CountryRisk` | Transaction amount × country risk interaction |
+| `Volume_x_CountryRisk` | Transaction volume ├ù country risk interaction |
+| `Amount_x_CountryRisk` | Transaction amount ├ù country risk interaction |
 
 #### Feature Selection by Correlation
 Top 6 features selected by absolute Pearson correlation with `Risk_Target`.
@@ -236,7 +236,7 @@ Manual implementation over 300 iterations ($\alpha = 0.1$, feature standardised)
 
 ---
 
-### Notebook 2 — Bias-Variance Tradeoff & Regularisation
+### Notebook 2 ΓÇö Bias-Variance Tradeoff & Regularisation
 
 **Notebook:** `Classification/Classification2.ipynb`
 
@@ -257,8 +257,8 @@ Regularised logistic regression cost function:
 $$J(\theta) = -\frac{1}{m} \sum \left[ y \log(h_\theta(x)) + (1-y) \log(1 - h_\theta(x)) \right] + \frac{\lambda}{2m} \sum_{j} \theta_j^2$$
 
 In scikit-learn, $C \approx \frac{1}{\lambda}$:
-- **Small C** → strong regularisation → simpler model → risk of underfitting
-- **Large C** → weak regularisation → complex model → risk of overfitting
+- **Small C** ΓåÆ strong regularisation ΓåÆ simpler model ΓåÆ risk of underfitting
+- **Large C** ΓåÆ weak regularisation ΓåÆ complex model ΓåÆ risk of overfitting
 
 #### Regularisation Sweep
 13 values of C on a log scale ($10^{-4}$ to $10^4$) tested with degree-2 polynomial features. Tracks:
@@ -267,7 +267,7 @@ In scikit-learn, $C \approx \frac{1}{\lambda}$:
 - Best C selected by highest test accuracy with smallest gap
 
 #### Visualisations
-- Train vs test accuracy vs log(C) — highlights optimal zone
+- Train vs test accuracy vs log(C) ΓÇö highlights optimal zone
 - Train-test gap vs log(C)
 - Coefficient L2 norm vs log(C)
 - Cost function formula panel with interpretation notes
@@ -278,7 +278,7 @@ In scikit-learn, $C \approx \frac{1}{\lambda}$:
 
 | Dataset | Location | Rows | Key Columns |
 |---|---|---|---|
-| `aml_fraud_customer_profiling.csv` | `Classification/data/` | — | `Risk_Target`, `Risk_Label`, `Country_Risk_Score`, country-amount interactions |
+| `aml_fraud_customer_profiling.csv` | `Classification/data/` | ΓÇö | `Risk_Target`, `Risk_Label`, `Country_Risk_Score`, country-amount interactions |
 | `linear_regression_practice.csv` | `Linear regression Basics/` | 200 | `size_sqft`, `bedrooms`, `age_years`, `price` |
 | `fraud_scoring_dataset.csv` | `Multiple Linear Regression/data/` | 1,000 | `transaction_amount`, `customer_age`, `fraud_score`, `country`, `country_risk_group` |
 
@@ -305,4 +305,4 @@ In scikit-learn, $C \approx \frac{1}{\lambda}$:
 4. Apply Z-score normalisation and one-hot encoding as preprocessing steps for regression.
 5. Build a Multiple Linear Regression model using the Normal Equation and interpret feature weights.
 6. Demonstrate overfitting and underfitting empirically and use L2 regularisation to balance the bias-variance tradeoff.
-7. Apply all concepts in the context of financial crime — AML risk scoring and fraud detection.
+7. Apply all concepts in the context of financial crime ΓÇö AML risk scoring and fraud detection.
